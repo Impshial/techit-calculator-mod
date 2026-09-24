@@ -1,0 +1,82 @@
+{
+  "format": "techit-minecraft-build-list",
+  "version": 1,
+  "minecraftVersion": "1.6.4",
+  "modpack": "TechIt-ng",
+  "scope": "build",
+  "catalog": {
+    "snapshot": null,
+    "sha256": null
+  },
+  "plans": [
+    {
+      "ref": "item:917:4",
+      "name": "Resonant Energy Cell",
+      "quantity": 1,
+      "kind": "item",
+      "itemId": 917,
+      "metadata": 4,
+      "unit": "items",
+      "chargeIndependent": true
+    },
+    {
+      "ref": "item:10273:1@2da9e52da141",
+      "name": "Block of Manyullyn Fence",
+      "quantity": 1,
+      "kind": "item",
+      "itemId": 10273,
+      "metadata": 1,
+      "unit": "items",
+      "nbt": "{\"mat\":{\"type\":\"NBTTagString\",\"value\":{\"field_74751_a\":\"tile.tconstruct.metalblock_2\"}}}"
+    },
+    {
+      "ref": "fluid:33",
+      "name": "Molten Manyullyn",
+      "quantity": 288,
+      "kind": "fluid",
+      "fluidId": 33,
+      "unit": "mB",
+      "fluidName": "manyullyn.molten"
+    }
+  ],
+  "materials": [
+    {
+      "ref": "item:10273:1@2da9e52da141",
+      "name": "Block of Manyullyn Fence",
+      "quantity": 6,
+      "kind": "item",
+      "itemId": 10273,
+      "metadata": 1,
+      "unit": "items",
+      "nbt": "{\"mat\":{\"type\":\"NBTTagString\",\"value\":{\"field_74751_a\":\"tile.tconstruct.metalblock_2\"}}}",
+      "reasons": [
+        "chosen"
+      ]
+    },
+    {
+      "ref": "fluid:33",
+      "name": "Molten Manyullyn",
+      "quantity": 288,
+      "kind": "fluid",
+      "fluidId": 33,
+      "unit": "mB",
+      "fluidName": "manyullyn.molten",
+      "reasons": [
+        "chosen"
+      ]
+    },
+    {
+      "ref": "item:917:4",
+      "name": "Resonant Energy Cell",
+      "quantity": 1,
+      "kind": "item",
+      "itemId": 917,
+      "metadata": 4,
+      "unit": "items",
+      "chargeIndependent": true,
+      "reasons": [
+        "chosen"
+      ]
+    }
+  ]
+}

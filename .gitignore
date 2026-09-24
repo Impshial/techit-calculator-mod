@@ -1,0 +1,10 @@
+build/
+test-build/
+__pycache__/
+*.pyc
+*.class
+*.jar
+*.zip
+*.log
+.env
+.env.*
