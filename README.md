@@ -6,7 +6,7 @@ This repository contains only the Minecraft mod, its build tools, tests, and for
 
 ## Install
 
-1. Build `techit-build-list-0.2.1.jar` using the instructions below.
+1. Build `techit-build-list-0.2.2.jar` using the instructions below.
 2. With Minecraft closed, put the JAR in the TechIt-ng instance's `minecraft/mods` folder, replacing any older `techit-build-list` JAR, then launch the game.
 
 The mod creates `minecraft/techit-builds` and `minecraft/techit-builds/.progress` on its first load. No server installation or recipe-exporter mod is required. It adds no blocks, items, or world data.
@@ -25,7 +25,7 @@ For this PrismLauncher installation, the folder is:
 %APPDATA%\PrismLauncher\instances\TechIt-ng\minecraft\techit-builds
 ```
 
-Exports are named after their planned items, for example `Resonant Energy Cell.techit.json` or `2x ME Controller + Pulverizer.techit.json`. You can rename them to distinguish projects; keep the `.techit.json` ending. **Reload** rereads an open file after replacing it. **Lists** returns to the file picker.
+Exports are named after their planned items, for example `Resonant Energy Cell.techit.json` or `2x ME Controller + Pulverizer.techit.json`. You can rename them to distinguish projects; keep the `.techit.json` ending. **Reload** rereads an open file after replacing it. **Lists** returns to the file picker. Removed files disappear from both views while they are open. If the selected file is removed, the inventory view returns to the picker and the popup clears its items. **Reload** also clears an unavailable list; short status messages replace file paths, with technical details kept in the game log.
 
 ## Compact popup
 
@@ -47,7 +47,7 @@ The popup does not pause the world. Like other Minecraft GUI windows, it release
 - The inventory tab or **Inventory** button returns to the inventory; Escape closes the screen.
 - In the master list picker, each checkbox reflects whether all materials are complete. Click the checkbox to mark or clear the whole material list; click its name to open it.
 
-Progress is manual: version 0.2.1 does not count inventory contents or craft items. Each export is a snapshot of the calculator's **processed material totals**, even when the website's Ore Level display is checked. The mod neither recalculates recipes nor connects to the website. Use the same pack/configuration as the calculator because numeric IDs can differ between installations.
+Progress is manual: version 0.2.2 does not count inventory contents or craft items. Each export is a snapshot of the calculator's **processed material totals**, even when the website's Ore Level display is checked. The mod neither recalculates recipes nor connects to the website. Use the same pack/configuration as the calculator because numeric IDs can differ between installations.
 
 Progress files live under `.progress`, keyed by the export's SHA-256. `selection.json` remembers the last selected filename. Renaming an unchanged export preserves progress. Changing its contents starts a new checklist. Original exports are never modified, and deleting the mod leaves the lists and progress available.
 
@@ -62,8 +62,8 @@ python tools/test_build_list_mod.py
 
 The build reads the existing PrismLauncher Minecraft, Forge, Gson, Guava, LWJGL, ASM, and TConstruct JARs. Set `PRISM_HOME` to a different PrismLauncher directory or `TECHIT_JDK` to a JDK 8 `bin` directory if needed. The configured instance name is `TechIt-ng`.
 
-The output is `techit-build-list-0.2.1.jar`, compiled as Java 7 bytecode. Only this mod's own classes and metadata are distributed; generated Minecraft/Forge compile dependencies remain ignored local build files.
+The output is `techit-build-list-0.2.2.jar`, compiled as Java 7 bytecode. Only this mod's own classes and metadata are distributed; generated Minecraft/Forge compile dependencies remain ignored local build files.
 
-The offline integration test uses a small checked-in calculator export fixture, restores exact typed NBT (including 64-bit values), tests saved progress, master completion, shared selection, popup bounds and scrolling, actual button hit areas, view/list switching, and checks the packaged bytecode. The earlier inventory tab and compact popup were confirmed in the installed game; the latest sizing and dropdown changes still need an in-game visual check.
+The offline integration test uses a small checked-in calculator export fixture, restores exact typed NBT (including 64-bit values), tests saved progress, master completion, shared selection, popup bounds and scrolling, actual button hit areas, view/list switching, file deletion during an open GUI, failed reloads, progress preservation, and checks the packaged bytecode. The earlier inventory tab and compact popup were confirmed in the installed game; the latest sizing and dropdown changes still need an in-game visual check.
 
 See [FORMAT.md](FORMAT.md) for the export contract.
